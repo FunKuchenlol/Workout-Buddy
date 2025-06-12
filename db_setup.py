@@ -47,4 +47,11 @@ CREATE TABLE IF NOT EXISTS TrainingPlan_Weekday (
 );
 """)
 
+# ---------------------- DUMMY DATA ---------------------- #
+
+cursor.execute("""
+
+""")
+
+
 connection.close()
