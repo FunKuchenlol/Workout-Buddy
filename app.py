@@ -1,25 +1,36 @@
-from flask import Flask, render_template, request, redirect, url_for
+from fastapi import FastAPI, Form, Request
+from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from cruds.device import read_all_devices, create_device
 
-app = Flask(__name__)
+app = FastAPI()
+app.mount('/static', StaticFiles(directory='static'), name='static')
+templates = Jinja2Templates(directory='templates')
 
-@app.route("/")
-def index():
+@app.get('/')
+def index(request: Request):
     device_list = read_all_devices()
-    return render_template("index.html", devices=device_list)
+    return templates.TemplateResponse(
+		'index.html', {'request': request, 'devices': device_list}
+	)
 
-@app.route("/add-device", methods=["GET", "POST"])
-def add_device():
-    if request.method == "POST":
-        name = request.form["name"]
-        active_time = int(request.form["active_time"])
-        break_time = int(request.form["break_time"])
-        sets = int(request.form["sets"])
-        picture_path = request.form["picture_path"]
-        create_device(name, active_time, break_time, sets, picture_path)
-        return redirect(url_for("index"))
-    return render_template("add_device.html")
+@app.get('/add-device')
+def add_device(request: Request):
+    return templates.TemplateResponse(
+		'add_device.html', {'request': request}
+	)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.post('/add-device')
+def add_new_device(
+    name: str = Form(...),
+    active_time: int = Form(...),
+    break_time: int = Form(...),
+    sets: int = Form(...),
+    picture_path: str = Form(...)
+):
+    create_device(name, active_time, break_time, sets, picture_path)
+    return RedirectResponse(url="/", status_code=303)
+
+
     

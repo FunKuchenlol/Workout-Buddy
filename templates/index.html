@@ -2,14 +2,17 @@
 <html>
 <head>
     <title>Workout-Buddy</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/bootstrap.css') }}">
+    <script src="{{ url_for('static', path='javascript/javascript.js') }}"></script>
 </head>
 <body>
+    <button id="theme-toggle" class="btn btn-secondary">🌙 Dark Mode</button>
+
     <h1>Willkommen bei Workout-Buddy!</h1>
     <p>Dein persönlicher Trainingsassistent 💪</p>
 
      <h2>All Devices</h2>
-    <a href="/add-device.html">+ Add Device</a>
+    <a href="/add-device">+ Add Device</a>
     <ul>
         {% for device in devices %}
             <li>{{ device[1] }} ({{ device[2] }}s active, {{ device[3] }}s break, {{ device[4] }} sets)</li>

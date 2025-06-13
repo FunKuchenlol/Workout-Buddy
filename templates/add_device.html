@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head><title>Add Device</title></head>
+<head>
+    <title>Add Device</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/bootstrap.css') }}">
+    <script src="{{ url_for('static', path='javascript/javascript.js') }}"></script>
+</head>
+</head>
 <body>
-    <h1>Add Device</h1>
+    <button id="theme-toggle" class="btn btn-secondary">🌙 Dark Mode</button>
+    
+    <h1>Drugs Device</h1>
     <form method="POST">
         <label>Name: <input name="name" required></label><br>
         <label>Active Time: <input name="active_time" type="number" required></label><br>
         <label>Break Time: <input name="break_time" type="number" required></label><br>
         <label>Sets: <input name="sets" type="number" required></label><br>
         <label>Picture Path: <input name="picture_path"></label><br>
-        <button type="submit">Save</button>
+        <button class="btn btn-primary" type="submit">Save</button>
     </form>
 </body>
 </html>

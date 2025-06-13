@@ -1,7 +1,7 @@
 import sqlite3
 
 DB = "WorkoutBuddy.sqlite"
-connection = sqlite3.connect(DB)
+connection = sqlite3.connect(DB, check_same_thread=False)
 cursor = connection.cursor()
 
 #----------------------CRUD-FUNCTIONS FOR DEVICE----------------------#
