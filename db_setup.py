@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS Device (
     active_time INTEGER,
     break_time INTEGER,
     sets INTEGER,
+    weight INTEGER,
     picture_path TEXT
 );
 """)
