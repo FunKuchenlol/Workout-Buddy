@@ -12,20 +12,22 @@
     {% include 'components/nav_bar.html' %}
     <div class="container-fluid p-3">
         <div class="d-flex">
-            <div class="d-flex justify-content-start flex-grow-1">
-                <h1>Welcome to Workout-Buddy!</h1>
-            </div>
-                
-            <div class="d-flex justify-content-end">
-                <div class="d-flex align-items-center">
-                    <button id="theme-toggle" class="btn btn-secondary"></button> 
+                <div class="d-flex justify-content-start flex-grow-1">
+                    <h1>All Devices</h1>
                 </div>
-            </div>
+                
+                <div class="d-flex justify-content-end">
+                    <div class="d-flex align-items-center">
+                        <button id="theme-toggle" class="btn btn-secondary"></button> 
+                    </div>
+                </div>
         </div>
-        <p>Your personal Trainer 💪</p>
-        <hr>
-
-        </ul>
+            <ul>
+                {% for device in devices %}
+                    <li>{{ device[1] }} ({{ device[2] }}s active, {{ device[3] }}s break, {{ device[4] }} sets)</li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </body>
 </html>
