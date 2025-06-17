@@ -10,7 +10,7 @@ cursor.execute("""
 CREATE TABLE IF NOT EXISTS Device (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
-    active_time INTEGER,
+    repetitions INTEGER,
     break_time INTEGER,
     sets INTEGER,
     weight INTEGER,
@@ -46,12 +46,6 @@ CREATE TABLE IF NOT EXISTS TrainingPlan_Weekday (
     weekday TEXT,
     FOREIGN KEY (training_plan_id) REFERENCES TrainingPlan(id)
 );
-""")
-
-# ---------------------- DUMMY DATA ---------------------- #
-
-cursor.execute("""
-
 """)
 
 
