@@ -5,12 +5,8 @@ Created because of an Schoolproject.
 
 ## TODO (new):
 
-- [ ] better UX (already working on it ✨)
-- [ ] .gitignore should not ignore saved_pictures but the contents of it
-- [ ] Use same cardlayout for edit and delete. Edit can have same editing site as add_device, but user needs to see the saved values while editing (Need to think how I want to present that)
-- [ ] Database changes (unfortunately 😭) and all changes that come with that...:
+- [ ] .gitignore should not ignore saved_pictures but not the contents in it
 - [ ] Devices, that save active time (in min), no break time and no sets (aka. stamina devices)
-- [ ] Devices, that save repetitions, breaktime (in s) and sets (aka. strength devices)
 - [ ] Add device needs an choosing screen then, where the user can choose between adding a stamina, or strength device
 
 ## TODO (in general):
@@ -22,8 +18,11 @@ Created because of an Schoolproject.
 - [ ] Building a Training Timer (more about the functions of that: notes about it on my phone)
 - [ ] Add weekdays and calendar stuff to trainingsplan
 
-## DONE:
+## DONE:#
 
+- [x] Devices, that save repetitions, breaktime (in s) and sets (aka. strength devices)
+- [x] Use same cardlayout for edit and delete. Edit can have same editing site as add_device, but user needs to see the saved values while editing (Need to think how I want to present that)
+- [x] better UX (already working on it ✨)
 - [x] Edit Device
 - [x] Delete Device
 - [x] Create Device

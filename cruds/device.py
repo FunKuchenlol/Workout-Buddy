@@ -5,27 +5,27 @@ connection = sqlite3.connect(DB, check_same_thread=False)
 cursor = connection.cursor()
 
 #---------------------- CREATE DEVICE----------------------#
-def create_device(name, repetitions, break_time, sets, picture_path):
+def create_device(name, repetitions, break_time, sets, weight, picture_path): 
     cursor.execute("""
-        INSERT INTO Device (name, repetitions, break_time, sets, picture_path)
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO Device (name, repetitions, break_time, sets, weight, picture_path)
+        VALUES (?, ?, ?, ?, ?, ?)
         """, 
-        (name, repetitions, break_time, sets, picture_path))
+        (name, repetitions, break_time, sets, weight, picture_path))
     connection.commit()
 
 #---------------------- READ DEVICE----------------------#
 def read_all_devices():
-    cursor.execute("SELECT * FROM Device")
+    cursor.execute("SELECT id, name, repetitions, break_time, sets, weight, picture_path FROM Device") 
     return cursor.fetchall()
 
 #---------------------- UPDATE DEVICE----------------------#
-def update_device(device_id, name, repetitions, break_time, sets, picture_path):
+def update_device(device_id, name, repetitions, break_time, sets, weight, picture_path): 
     cursor.execute("""
         UPDATE Device
-        SET name = ?, repetitions = ?, break_time = ?, sets = ?, picture_path = ?
+        SET name = ?, repetitions = ?, break_time = ?, sets = ?, weight = ?, picture_path = ?
         WHERE id = ?
         """, 
-        (name, repetitions, break_time, sets, picture_path, device_id))
+        (name, repetitions, break_time, sets, weight, picture_path, device_id))
     connection.commit()
 
 #---------------------- DELETE DEVICE----------------------#

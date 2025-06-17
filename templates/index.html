@@ -10,22 +10,15 @@
 </head>
 <body>
     {% include 'components/nav_bar.html' %}
-    <div class="container-fluid p-3">
-        <div class="d-flex">
-            <div class="d-flex justify-content-start flex-grow-1">
-                <h1>Welcome to Workout-Buddy!</h1>
-            </div>
-                
-            <div class="d-flex justify-content-end">
-                <div class="d-flex align-items-center">
-                    <button id="theme-toggle" class="btn btn-secondary"></button> 
-                </div>
-            </div>
-        </div>
-        <p>Your personal Trainer 💪</p>
-        <hr>
-
-        </ul>
+<div class="container-fluid p-5 text-center">
+        <h1 class="display-4">Welcome to Workout-Buddy!</h1>
+        <p class="lead">Your personal trainer for managing all your workout devices.</p>
+        <hr class="my-4">
+        <p>Ready to start? Manage your devices or learn more about the app.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg mb-3" href="{{ url_for('devices') }}" role="button">Go to My Devices</a>
+            <a class="btn btn-secondary btn-lg ms-3 mb-3" href="{{ url_for('about') }}" role="button">Learn More</a>
+        </p>
     </div>
 </body>
 </html>
