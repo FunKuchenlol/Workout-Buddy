@@ -18,7 +18,7 @@ Created because of an Schoolproject.
 - [ ] Building a Training Timer (more about the functions of that: notes about it on my phone)
 - [ ] Add weekdays and calendar stuff to trainingsplan
 
-## DONE:#
+## DONE:
 
 - [x] Devices, that save repetitions, breaktime (in s) and sets (aka. strength devices)
 - [x] Use same cardlayout for edit and delete. Edit can have same editing site as add_device, but user needs to see the saved values while editing (Need to think how I want to present that)
