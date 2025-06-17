@@ -5,6 +5,7 @@ Created because of an Schoolproject.
 
 ## TODO (new):
 
+- [ ] better UX (already working on it ✨)
 - [ ] .gitignore should not ignore saved_pictures but the contents of it
 - [ ] Use same cardlayout for edit and delete. Edit can have same editing site as add_device, but user needs to see the saved values while editing (Need to think how I want to present that)
 - [ ] Database changes (unfortunately 😭) and all changes that come with that...:
@@ -14,7 +15,6 @@ Created because of an Schoolproject.
 
 ## TODO (in general):
 
-- [ ] Edit Device
 - [ ] Create Trainingplan
 - [ ] Read Trainingplan
 - [ ] Update Trainingplan
@@ -24,6 +24,7 @@ Created because of an Schoolproject.
 
 ## DONE:
 
+- [x] Edit Device
 - [x] Delete Device
 - [x] Create Device
 - [x] All Devices
