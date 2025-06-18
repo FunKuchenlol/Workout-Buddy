@@ -3,3 +3,4 @@ __pycache__/
 node_modules/
 !static/pictures/saved_pictures/
 static/pictures/saved_pictures/*
+WorkoutBuddy.sqlite
