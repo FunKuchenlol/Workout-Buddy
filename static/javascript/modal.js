@@ -1,25 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const addDropZone = document.getElementById("add-drop-zone");
-    const addFileInput = document.getElementById("addFileUpload");
-    const addPreviewImage = document.getElementById("add-preview-image");
-
-    if (addDropZone && addFileInput && addPreviewImage) {
-        addDropZone.addEventListener("click", () => addFileInput.click());
-        addDropZone.addEventListener("dragover", (e) => { e.preventDefault(); addDropZone.classList.add("drag-over"); });
-        addDropZone.addEventListener("dragleave", () => { addDropZone.classList.remove("drag-over"); });
-        addDropZone.addEventListener("drop", (e) => {
-            e.preventDefault();
-            addDropZone.classList.remove("drag-over");
-            const file = e.dataTransfer.files[0];
-            addFileInput.files = e.dataTransfer.files;
-            updatePreview(file, addPreviewImage);
-        });
-        addFileInput.addEventListener("change", () => {
-            const file = addFileInput.files[0];
-            updatePreview(file, addPreviewImage);
-        });
-    }
-
     const editDeviceModal = document.getElementById('editDeviceModal');
     const editDropZone = document.getElementById("edit-drop-zone");
     const editFileInput = document.getElementById("editFileUpload");
@@ -64,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         addPreviewImage.classList.remove('d-block');
         addPreviewImage.classList.add('d-none');
     });
-            
+
     editDeviceModal.addEventListener('hidden.bs.modal', event => {
         const form = event.target.querySelector('form');
         form.reset(); 

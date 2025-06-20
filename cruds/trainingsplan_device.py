@@ -4,8 +4,7 @@ DB = "WorkoutBuddy.sqlite"
 connection = sqlite3.connect(DB)
 cursor = connection.cursor()
 
-#----------------------CRUD-FUNCTIONS FOR TRAININGSPLAN_DEVICE----------------------#
-
+#---------------------- LINK TRAININGSPLAN_DEVICE ----------------------#
 def link_device_to_plan(training_plan_id, device_id):
     with sqlite3.connect(DB) as conn:
         cursor = conn.cursor()
@@ -15,6 +14,7 @@ def link_device_to_plan(training_plan_id, device_id):
         """, (training_plan_id, device_id))
         conn.commit()
 
+#---------------------- UNLINK TRAININGSPLAN_DEVICE ----------------------#
 def unlink_device_from_plan(training_plan_id, device_id):
     with sqlite3.connect(DB) as conn:
         cursor = conn.cursor()

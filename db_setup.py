@@ -5,7 +5,6 @@ cursor = connection.cursor()
 
 # ---------------------- CREATE THE DATABASE ---------------------- #
 
-# Devices table
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS Device (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,7 +17,6 @@ CREATE TABLE IF NOT EXISTS Device (
 );
 """)
 
-# Training plans table
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS TrainingPlan (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,7 +25,6 @@ CREATE TABLE IF NOT EXISTS TrainingPlan (
 );
 """)
 
-# Many-to-many relationship: training plans and devices
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS TrainingPlan_Device (
     training_plan_id INTEGER,
@@ -38,7 +35,6 @@ CREATE TABLE IF NOT EXISTS TrainingPlan_Device (
 );
 """)
 
-# Training days for each plan
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS TrainingPlan_Weekday (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
